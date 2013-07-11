@@ -20,3 +20,4 @@ Will need to integrate with something like [Kinetic.js](http://kineticjs.com) to
 
 ## Credits
 This code base was heavily influenced by Seb Lee-Delisle's [presentation](http://seb.ly/2010/11/javascript-2d-and-3d-particle-effects-at-full-frontal/) at Full Frontal JS 2010.
+ 
