@@ -85,35 +85,14 @@ function init()
             maxZ = p1.z
             points.push(p1)
         } else {
-            console.log('looking to insert ' + p1.z + 'in the middle somewhere')
             for (var j = 0; j < points.length; j++) {
-                console.log('is ' + p1.z + ' < ' + points[j].z + '?')
                 if (p1.z < points[j].z) {
-                    console.log('yes, inserted')
                     points.splice(j, 0, p1)
-                    console.log(points)
                     break
                 }
-                console.log('no, looking again')
             }
         } 
-            
-
-
-        // and then make 4 points that start at that point and 
-        // gradually get further away. In other words, the points
-        // are in bunches of 4 in a line. 
-
-        // we're not showing 4 points in a row
-        //for(var j = 0; j<4; j++)
-        //{
-        //    points.push(new Point3D(p1.x, p1.y, p1.z+(j*10)))
-        //}
-
-
     }
-    console.log(points)
-
 }
 
 function onDocumentMouseMove( event ) 
