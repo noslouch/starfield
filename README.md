@@ -1,4 +1,4 @@
-# Image Starfield
+# Image Starfield Effect
 **An HTML5/canvas animation that animates along the z-axis to a point on the horizon**
 
 ## v0.1.0b
