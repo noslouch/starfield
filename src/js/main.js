@@ -14,7 +14,7 @@ context = canvas.getContext( '2d' ),
 mouseX = 0, mouseY = 0, 
 
 // notional field of view for 3D projection
-fov = 180,
+fov = 150,
 
 // to convert from degrees to radians, 
 // multiply by this number!
@@ -64,10 +64,41 @@ function init()
     document.addEventListener('mouseout', resume, false);
 
 
-    for(var i = 0 ; i< 8; i++)
+    var leastZ = 0 
+    var maxZ = 0
+
+    for(var i = 0 ; i< 24; i++)
     {
         // make a random point
+        //var p1 = new Point3D(randomRange(-150,150),randomRange(-150,150),randomRange(-fov,fov));
         var p1 = new Point3D(randomRange(-150,150),randomRange(-150,150),randomRange(-fov,fov));
+
+        if (i === 0) { 
+            leastZ = p1.z
+            maxZ = p1.z
+            points.unshift(p1) 
+        }
+        else if (p1.z < leastZ) { 
+            leastZ = p1.z 
+            points.unshift(p1)
+        } else if (p1.z > maxZ) {
+            maxZ = p1.z
+            points.push(p1)
+        } else {
+            console.log('looking to insert ' + p1.z + 'in the middle somewhere')
+            for (var j = 0; j < points.length; j++) {
+                console.log('is ' + p1.z + ' < ' + points[j].z + '?')
+                if (p1.z < points[j].z) {
+                    console.log('yes, inserted')
+                    points.splice(j, 0, p1)
+                    console.log(points)
+                    break
+                }
+                console.log('no, looking again')
+            }
+        } 
+            
+
 
         // and then make 4 points that start at that point and 
         // gradually get further away. In other words, the points
@@ -79,10 +110,9 @@ function init()
         //    points.push(new Point3D(p1.x, p1.y, p1.z+(j*10)))
         //}
 
-        points.push(p1)
 
     }
-
+    console.log(points)
 
 }
 
@@ -114,7 +144,7 @@ function loopInit()
     // before we draw all the particles, we set the composite operation to
     // 'lighter' which is the same as the lighten blend mode in Photoshop,
     // also known as "additive blending".             
-    context.globalCompositeOperation = 'darken';
+    //context.globalCompositeOperation = 'darken';
 
 }
 
@@ -126,14 +156,14 @@ function fastLoop()
     {
         var point = points[i]; 
 
-        point.z += 1.5   
+        point.z += 2.5   
 
         // if we're too close move the particle to the back and vice versa
         if(point.z<-fov) { point.z = point.z + fov + fov }
         else if(point.z>fov) { point.z = point.z - fov - fov }
 
         // render it
-        draw3Din2D(point, context, images[i])
+        draw3Din2D(point, context, images[i%8])
 
     }
 
@@ -145,13 +175,12 @@ function slowLoop(){
     for (i=0; i<points.length; i++)
     {
         var point = points[i]
-
         point.z += (0.1)
 
         if(point.z<-fov) { point.z = point.z + fov + fov }
         else if(point.z>fov) { point.z = point.z - fov - fov }
 
-        draw3Din2D(point, context, images[i]) 
+        draw3Din2D(point, context, images[i%8]) 
     }
 }
 
