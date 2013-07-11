@@ -16,6 +16,7 @@ Will need to integrate with something like [Kinetic.js](http://kineticjs.com) to
 * Add event handling for individual images
 * Adjust image tracks so they don't all move towards the same point on the horizon
 * Would be cool to do some minor perspective skewing based on mouse position
+* Improve Z-Index ordering
 
 ## Credits
 This is code base was heavily influenced by Seb Lee-Delisle's [presentation](http://seb.ly/2010/11/javascript-2d-and-3d-particle-effects-at-full-frontal/) at Full Frontal JS 2010.
