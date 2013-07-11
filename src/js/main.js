@@ -1,3 +1,5 @@
+// TODO: adjust new image tracks so they don't all go to the same horizon point
+
 // screen size variables
 var SCREEN_WIDTH = window.innerWidth,
 SCREEN_HEIGHT = window.innerHeight,
@@ -48,6 +50,7 @@ function init()
     // move origin into the centre of the screen
     context.translate(HALF_WIDTH, HALF_HEIGHT);
 
+    // TODO: grab images from server
     particleImage.src = 'img/particle.png'
     for (var i = 0; i < 8; i++){
         images[i] = new Image()
@@ -55,6 +58,7 @@ function init()
     }
 
 
+    // TODO: handle mouseover events on specific images to show metadata
     //document.addEventListener('mousemove', onDocumentMouseMove, false);
     document.addEventListener('mouseover', slowDown, false);
     document.addEventListener('mouseout', resume, false);
@@ -112,7 +116,6 @@ function loopInit()
     // also known as "additive blending".             
     context.globalCompositeOperation = 'darken';
 
-    // iteratate through each point
 }
 
 function fastLoop() 
@@ -126,11 +129,11 @@ function fastLoop()
         point.z += 1.5   
 
         // if we're too close move the particle to the back and vice versa
-        if(point.z<-fov) point.z = point.z + fov + fov; 
-        else if(point.z>fov) point.z = point.z - fov - fov;
+        if(point.z<-fov) { point.z = point.z + fov + fov }
+        else if(point.z>fov) { point.z = point.z - fov - fov }
 
         // render it
-        draw3Din2D(point, context, images[i]); 
+        draw3Din2D(point, context, images[i])
 
     }
 
@@ -145,10 +148,10 @@ function slowLoop(){
 
         point.z += (0.1)
 
-        if(point.z<-fov) { point.z = point.z + fov + fov; }
-        else if(point.z>fov) { point.z = point.z - fov - fov; }
+        if(point.z<-fov) { point.z = point.z + fov + fov }
+        else if(point.z>fov) { point.z = point.z - fov - fov }
 
-        draw3Din2D(point, context, images[i]); 
+        draw3Din2D(point, context, images[i]) 
     }
 }
 
@@ -166,9 +169,9 @@ function resume(){
 
 function Point3D(x,y,z)
 {
-    this.x = x; 
-    this.y = y; 
-    this.z = z; 
+    this.x = x 
+    this.y = y 
+    this.z = z 
 
 }
 
@@ -176,40 +179,40 @@ function draw3Din2D(p3d, c, i)
 {  
     // first, work out how small it should be
     // using the z pos ( how far away it is :) ) 
-    var scale = fov/(fov + p3d.z);
+    var scale = fov/(fov + p3d.z)
 
     // if the particle is behind the camera, then don't draw it!
-    if(scale<0) return; 
+    if(scale<0) { return }
     // or if it's too big then don't draw it!
-    else if (scale>12) return; 
+    else if (scale>12) { return }
 
     // then multiply the 3D x and y by this scale
     // to get the 2D x and y. 
-    var x2d = (p3d.x * scale);  
-    var y2d = (p3d.y * scale);
+    var x2d = (p3d.x * scale) 
+    var y2d = (p3d.y * scale)
 
     // canvas.save() saves the state of the draw matrix
     // so we can scale and translate as much as we want 
     // and then restore later. 
-    c.save(); 
+    c.save() 
 
     // translate the draw matrix to move to the center of the particle
-    c.translate(x2d, y2d);
+    c.translate(x2d, y2d)
     // adjust the size dependent on the calculated scale factor
     // (0.8 is just an adjuster to make it a little smaller)
-    c.scale(scale*0.8, scale*0.8); 
+    c.scale(scale*0.8, scale*0.8)
     // and offset so the image is centred on the position
     //c.translate(particleImage.width * -0.5, particleImage.height * -0.5 );
     // and then draw it at 0,0 (which has now been shifted to reflect
     // the particle position. 
     //c.drawImage(particleImage, 0,0); 
 
-    c.translate(i.width * -0.5, i.height * -0.5 );
-    c.drawImage(i, 0,0); 
+    c.translate(i.width * -0.5, i.height * -0.5 )
+    c.drawImage(i, 0,0) 
 
     // finally restore the canvas state to what it was before we started 
     // screwing with it :)
-    c.restore();
+    c.restore()
 
 }
 
@@ -217,5 +220,5 @@ function draw3Din2D(p3d, c, i)
 // returns a random number between the two limits provided 
 function randomRange(min, max)
 {
-    return ((Math.random()*(max-min)) + min); 
+    return ((Math.random()*(max-min)) + min)
 }
