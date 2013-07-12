@@ -8,7 +8,8 @@ module.exports = function(grunt) {
             },
             build: {
                 files : {
-                    'build/<%= pkg.js %>.min.js' : ['src/<%= pkg.js %>.js']
+                    "build/<%= pkg.js[0] %>.min.js" : ["src/<%= pkg.js[0] %>.js"],
+                    "build/<%= pkg.js[1] %>.min.js" : ["src/<%= pkg.js[1] %>.js"],
                 }
             }
         },

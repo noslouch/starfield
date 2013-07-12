@@ -7,6 +7,5 @@
     "grunt-contrib-watch": "~0.4.4",
     "grunt-contrib-compass": "~0.3.0"
   },
-  "js": "js/main",
-  "css": "css/main"
+  "js" : ["js/main", "js/jq-animation"]
 }
