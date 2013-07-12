@@ -87,6 +87,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   -moz-animation-duration: 15s;
   -moz-animation-name: starfield;
   -moz-animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   opacity: 0;
   -webkit-transition: box-shadow 250ms ease-out;
   -moz-transition: box-shadow 250ms ease-out;
@@ -94,7 +100,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   transition: box-shadow 250ms ease-out;
 }
 
-/* line 35, ../../src/sass/screen.scss */
+/* line 36, ../../src/sass/screen.scss */
 .fast:hover {
   -webkit-animation-play-state: paused;
   -moz-animation-play-state: paused;
@@ -106,24 +112,24 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 @-webkit-keyframes starfield {
-  /* line 44, ../../src/sass/screen.scss */
+  /* line 45, ../../src/sass/screen.scss */
   from {
     -webkit-transform: translate3d(0, 0, 1000px);
     opacity: 0;
     z-index: 100;
   }
 
-  /* line 49, ../../src/sass/screen.scss */
+  /* line 50, ../../src/sass/screen.scss */
   15% {
     opacity: 1;
   }
 
-  /* line 52, ../../src/sass/screen.scss */
+  /* line 53, ../../src/sass/screen.scss */
   50% {
     opacity: 1;
   }
 
-  /* line 55, ../../src/sass/screen.scss */
+  /* line 56, ../../src/sass/screen.scss */
   to {
     -webkit-transform: translate3d(0, 0, -4000px);
     z-index: 0;
@@ -131,24 +137,24 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 @-moz-keyframes starfield {
-  /* line 61, ../../src/sass/screen.scss */
+  /* line 62, ../../src/sass/screen.scss */
   from {
     -moz-transform: translate3d(0, 0, 1000px);
     opacity: 0;
     z-index: 100;
   }
 
-  /* line 66, ../../src/sass/screen.scss */
+  /* line 67, ../../src/sass/screen.scss */
   15% {
     opacity: 1;
   }
 
-  /* line 69, ../../src/sass/screen.scss */
+  /* line 70, ../../src/sass/screen.scss */
   50% {
     opacity: 1;
   }
 
-  /* line 72, ../../src/sass/screen.scss */
+  /* line 73, ../../src/sass/screen.scss */
   to {
     -moz-transform: translate3d(0, 0, -4000px);
     z-index: 0;
@@ -156,24 +162,24 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 @keyframes starfield {
-  /* line 78, ../../src/sass/screen.scss */
+  /* line 79, ../../src/sass/screen.scss */
   from {
     transform: translate3d(0, 0, 1000px);
     opacity: 0;
     z-index: 100;
   }
 
-  /* line 83, ../../src/sass/screen.scss */
+  /* line 84, ../../src/sass/screen.scss */
   15% {
     opacity: 1;
   }
 
-  /* line 86, ../../src/sass/screen.scss */
+  /* line 87, ../../src/sass/screen.scss */
   50% {
     opacity: 1;
   }
 
-  /* line 89, ../../src/sass/screen.scss */
+  /* line 90, ../../src/sass/screen.scss */
   to {
     transform: translate3d(0, 700px, -4000px);
     z-index: 0;

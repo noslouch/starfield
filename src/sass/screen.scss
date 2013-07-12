@@ -26,7 +26,8 @@
 
    .fast {
        @include animation-props(15s, starfield, infinite);
-       //@include translate3d(0,0,1000px);
+       animation-fill-mode: forwards;
+       @include translate3d(0,0,0);
         opacity: 0;
         @include transition(box-shadow 250ms ease-out);
     }
