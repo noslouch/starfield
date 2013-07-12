@@ -69,11 +69,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 20, ../../src/sass/screen.scss */
 .container {
-  -webkit-perspective: 450px;
-  -moz-perspective: 450px;
-  -ms-perspective: 450px;
-  -o-perspective: 450px;
-  perspective: 450px;
   position: relative;
   width: 100%;
   height: 980px;
@@ -87,7 +82,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   -moz-animation-duration: 15s;
   -moz-animation-name: starfield;
   -moz-animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
@@ -100,7 +94,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   transition: box-shadow 250ms ease-out;
 }
 
-/* line 36, ../../src/sass/screen.scss */
+/* line 35, ../../src/sass/screen.scss */
 .fast:hover {
   -webkit-animation-play-state: paused;
   -moz-animation-play-state: paused;
@@ -112,24 +106,24 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 @-webkit-keyframes starfield {
-  /* line 45, ../../src/sass/screen.scss */
+  /* line 44, ../../src/sass/screen.scss */
   from {
     -webkit-transform: translate3d(0, 0, 1000px);
     opacity: 0;
     z-index: 100;
   }
 
-  /* line 50, ../../src/sass/screen.scss */
+  /* line 49, ../../src/sass/screen.scss */
   15% {
     opacity: 1;
   }
 
-  /* line 53, ../../src/sass/screen.scss */
+  /* line 52, ../../src/sass/screen.scss */
   50% {
     opacity: 1;
   }
 
-  /* line 56, ../../src/sass/screen.scss */
+  /* line 55, ../../src/sass/screen.scss */
   to {
     -webkit-transform: translate3d(0, 0, -4000px);
     z-index: 0;
@@ -137,24 +131,24 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 @-moz-keyframes starfield {
-  /* line 62, ../../src/sass/screen.scss */
+  /* line 61, ../../src/sass/screen.scss */
   from {
     -moz-transform: translate3d(0, 0, 1000px);
     opacity: 0;
     z-index: 100;
   }
 
-  /* line 67, ../../src/sass/screen.scss */
+  /* line 66, ../../src/sass/screen.scss */
   15% {
     opacity: 1;
   }
 
-  /* line 70, ../../src/sass/screen.scss */
+  /* line 69, ../../src/sass/screen.scss */
   50% {
     opacity: 1;
   }
 
-  /* line 73, ../../src/sass/screen.scss */
+  /* line 72, ../../src/sass/screen.scss */
   to {
     -moz-transform: translate3d(0, 0, -4000px);
     z-index: 0;
@@ -162,24 +156,24 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 @keyframes starfield {
-  /* line 79, ../../src/sass/screen.scss */
+  /* line 78, ../../src/sass/screen.scss */
   from {
     transform: translate3d(0, 0, 1000px);
     opacity: 0;
     z-index: 100;
   }
 
-  /* line 84, ../../src/sass/screen.scss */
+  /* line 83, ../../src/sass/screen.scss */
   15% {
     opacity: 1;
   }
 
-  /* line 87, ../../src/sass/screen.scss */
+  /* line 86, ../../src/sass/screen.scss */
   50% {
     opacity: 1;
   }
 
-  /* line 90, ../../src/sass/screen.scss */
+  /* line 89, ../../src/sass/screen.scss */
   to {
     transform: translate3d(0, 700px, -4000px);
     z-index: 0;
