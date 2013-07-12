@@ -13,7 +13,7 @@ $(function(){
         stagger()
     })
 
-    for (var i = 0; i < 48; i++){
+    for (var i = 0; i < 28; i++){
         images[i] = new Image()
         images[i].src = 'img/' + (i%8+1) + '.png'
         $(images[i]).css({
@@ -22,7 +22,7 @@ $(function(){
             top : HALF_HEIGHT + randomRange(-HALF_HEIGHT, HALF_HEIGHT)
         }).addClass('fast')
         
-        if (i === 47) { $container.trigger('finished') }
+        if (i === 27) { $container.trigger('finished') }
     }
 
     function stagger(){
