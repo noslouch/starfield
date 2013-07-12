@@ -80,18 +80,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   overflow: hidden;
 }
 /* line 27, ../../src/sass/screen.scss */
-.container img {
+.container .fast {
   -webkit-animation-duration: 15s;
   -webkit-animation-name: starfield;
   -webkit-animation-iteration-count: infinite;
   -moz-animation-duration: 15s;
   -moz-animation-name: starfield;
   -moz-animation-iteration-count: infinite;
-  -webkit-transform: translate3d(0, 0, 1000px);
-  -moz-transform: translate3d(0, 0, 1000px);
-  -ms-transform: translate3d(0, 0, 1000px);
-  -o-transform: translate3d(0, 0, 1000px);
-  transform: translate3d(0, 0, 1000px);
   opacity: 0;
   -webkit-transition: box-shadow 250ms ease-out;
   -moz-transition: box-shadow 250ms ease-out;
@@ -100,7 +95,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 35, ../../src/sass/screen.scss */
-img:hover {
+.fast:hover {
   -webkit-animation-play-state: paused;
   -moz-animation-play-state: paused;
   -o-animation-play-state: paused;

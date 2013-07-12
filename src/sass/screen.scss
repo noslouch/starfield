@@ -24,15 +24,15 @@
    height: 980px;
    overflow: hidden;
 
-   img {
+   .fast {
        @include animation-props(15s, starfield, infinite);
-       @include translate3d(0,0,1000px);
+       //@include translate3d(0,0,1000px);
         opacity: 0;
         @include transition(box-shadow 250ms ease-out);
     }
 } 
 
-img:hover{
+.fast:hover{
     -webkit-animation-play-state:paused;
     -moz-animation-play-state:paused;
     -o-animation-play-state:paused; 
