@@ -13,16 +13,16 @@ $(function(){
         stagger()
     })
 
-    for (var i = 0; i < 28; i++){
+    for (var i = 0; i < 18; i++){
         images[i] = new Image()
         images[i].src = 'img/' + (i%8+1) + '.png'
         $(images[i]).css({
-            position : 'absolute',
-            left : HALF_WIDTH + randomRange(-HALF_WIDTH, HALF_WIDTH),
-            top : HALF_HEIGHT + randomRange(-HALF_HEIGHT, HALF_HEIGHT)
+            //position : 'absolute',
+            //left : HALF_WIDTH + randomRange(-HALF_WIDTH, HALF_WIDTH),
+            //top : HALF_HEIGHT + randomRange(-HALF_HEIGHT, HALF_HEIGHT)
         }).addClass('fast')
         
-        if (i === 27) { $container.trigger('finished') }
+        if (i === 17) { $container.trigger('finished') }
     }
 
     function stagger(){
