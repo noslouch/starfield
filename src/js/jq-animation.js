@@ -22,7 +22,7 @@ $(function(){
             top : HALF_HEIGHT + randomRange(-HALF_HEIGHT, HALF_HEIGHT)
         }).addClass('fast')
         
-        if (i === 48) { $container.trigger('finished') }
+        if (i === 47) { $container.trigger('finished') }
     }
 
     function stagger(){
