@@ -6,6 +6,7 @@
 @import "compass/reset";
 @import "compass/css3/transform";
 @import "compass/css3/transition";
+@import "compass/css3/box-shadow";
 
 @mixin animation-props($duration, $name, $count){
     -webkit-animation-duration: $duration;
@@ -27,6 +28,7 @@
        @include animation-props(15s, starfield, infinite);
        @include translate3d(0,0,1000px);
         opacity: 0;
+        @include transition(box-shadow 250ms ease-out);
     }
 } 
 
@@ -35,6 +37,7 @@ img:hover{
     -moz-animation-play-state:paused;
     -o-animation-play-state:paused; 
     animation-play-state:paused;
+    @include single-box-shadow(rgba(105, 105, 105, 0.7), 5px, 5px, 50px, 10px);
 }
 
 @-webkit-keyframes starfield {
