@@ -37,7 +37,7 @@ img:hover{
     -moz-animation-play-state:paused;
     -o-animation-play-state:paused; 
     animation-play-state:paused;
-    @include single-box-shadow(rgba(105, 105, 105, 0.7), 5px, 5px, 50px, 10px);
+    @include single-box-shadow(rgba(105, 105, 105, 0.3), 5px, 5px, 40px, 0px);
 }
 
 @-webkit-keyframes starfield {
